@@ -2,29 +2,7 @@
   <DashboardLayout>
     <Container>
       <Loader v-if="loading" />
-      <table v-if="!loading">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Player</th>
-            <th>Email</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(player, index) in users" :key="player.id">
-            <td>
-              <img :src="player.avatar" />
-            </td>
-            <td>{{ player.first_name }} {{ player.last_name }}</td>
-            <td>{{ player.email }}</td>
-            <td>
-              <button class="btn btn-blue tw-mr-1">Edit</button>
-              <button class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <UserList v-if="!loading" :users="users"/>
     </Container>
   </DashboardLayout>
 </template>
@@ -34,6 +12,7 @@ import { defineComponent, ref, shallowRef } from 'vue';
 import Loader from '@/components/Loader.vue';
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 import Container from '@/components/Container.vue';
+import UserList from '@/components/User/UserList.vue';
 import { User } from '@/types/user';
 import axios from 'axios';
 
@@ -43,6 +22,7 @@ export default defineComponent({
     Loader,
     DashboardLayout,
     Container,
+    UserList
   },
   setup() {
     const loading = ref(false);
