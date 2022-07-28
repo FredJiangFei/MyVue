@@ -27,19 +27,22 @@
 
 <script lang="ts">
 import { defineComponent, ref, shallowRef } from 'vue';
-import Loader from "@/components/Loader.vue";
+import Loader from '@/components/Loader.vue';
 import { User } from '@/types/user';
 import axios from 'axios';
 
 export default defineComponent({
   name: 'User',
+  components: {
+    Loader,
+  },
   setup() {
     const loading = ref(false);
     const users = shallowRef<null | User[]>(null);
 
     return {
       loading,
-      users
+      users,
     };
   },
   async created() {
