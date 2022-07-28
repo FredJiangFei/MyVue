@@ -1,4 +1,4 @@
-# play-vue
+# play-vue-ts
 
 ## Project setup
 ```
