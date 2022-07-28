@@ -17,7 +17,9 @@
         <td>{{ player.email }}</td>
         <td>
           <button class="btn btn-blue tw-mr-1">Edit</button>
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-danger" @click="$emit('delete-user', player.id)">
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
@@ -33,8 +35,9 @@ export default defineComponent({
     users: {
       type: Array as PropType<User[]>,
       required: true,
-      default: []
-    }
+      default: [],
+    },
   },
+  emits: ['delete-user']
 });
 </script>

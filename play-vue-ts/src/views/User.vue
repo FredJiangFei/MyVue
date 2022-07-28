@@ -2,7 +2,7 @@
   <DashboardLayout>
     <Container>
       <Loader v-if="loading" />
-      <UserList v-if="!loading" :users="users"/>
+      <UserList v-if="!loading" :users="users" @delete-user="onDeleteUser"/>
     </Container>
   </DashboardLayout>
 </template>
@@ -46,5 +46,10 @@ export default defineComponent({
       this.loading = false;
     }
   },
+   methods: {
+    onDeleteUser(userId: number) {
+      console.log(userId);
+    }
+  }
 });
 </script>
