@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-bg-black tw-overflow-hidden">
+  <div>
     <h3>Layout</h3>
     <slot />
   </div>
