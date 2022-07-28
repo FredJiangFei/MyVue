@@ -19,7 +19,7 @@
             <td>{{ player.first_name }} {{ player.last_name }}</td>
             <td>{{ player.email }}</td>
             <td>
-              <button class="btn btn-blue mr-1">Edit</button>
+              <button class="btn btn-blue tw-mr-1">Edit</button>
               <button class="btn btn-danger">Delete</button>
             </td>
           </tr>

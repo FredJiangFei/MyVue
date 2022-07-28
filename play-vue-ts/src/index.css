@@ -1,37 +1,37 @@
 @tailwind base;
 .btn {
-    @apply px-4 py-2 font-bold rounded;
+    @apply tw-px-4 tw-py-2 tw-font-bold tw-rounded;
 }
 
 .btn-blue {
-    @apply px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700;
+    @apply tw-px-4 tw-py-2 tw-font-bold tw-text-white tw-bg-blue-500 tw-rounded hover:tw-bg-blue-700;
 }
 
 .btn-success {
-    @apply px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700;
+    @apply tw-px-4 tw-py-2 tw-font-bold tw-text-white tw-bg-green-500 tw-rounded hover:tw-bg-green-700;
 }
 .btn-danger {
-    @apply px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700;
+    @apply tw-px-4 tw-py-2 tw-font-bold tw-text-white tw-bg-red-500 tw-rounded hover:tw-bg-red-700;
 }
 
 @layer base {
     h1 {
-      @apply text-5xl;
+      @apply tw-text-5xl;
     }
     h2 {
-      @apply text-4xl;
+      @apply tw-text-4xl;
     }
     h3 {
-      @apply text-3xl;
+      @apply tw-text-3xl;
     }
     h4 {
-      @apply text-2xl;
+      @apply tw-text-2xl;
     }
     h5 {
-      @apply text-xl;
+      @apply tw-text-xl;
     }
     h6 {
-      @apply text-lg;
+      @apply tw-text-lg;
     }
   }
 
