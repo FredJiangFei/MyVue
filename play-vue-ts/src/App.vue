@@ -6,3 +6,9 @@
   </nav>
   <router-view />
 </template>
+
+<style lang="scss">
+* {
+  @apply tw-font-segoe;
+}
+</style>

@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   prefix: "tw-",
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     container: {
@@ -13,7 +15,11 @@ module.exports = {
         '2xl': '6rem',
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        segoe: ["Segoe UI", "sans-serif"]
+      }
+    }
   },
   plugins: [],
 };
