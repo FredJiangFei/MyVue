@@ -1,12 +1,12 @@
 <template>
- <h1 class="text-3xl font-bold underline">Home</h1>
+  <h1 class="text-3xl font-bold underline">Home</h1>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'HomeView',
+  name: 'Home',
   components: {
   },
 });

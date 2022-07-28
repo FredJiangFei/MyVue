@@ -1,0 +1,36 @@
+@tailwind base;
+.btn {
+    @apply px-4 py-2 font-bold rounded;
+}
+
+.btn-blue {
+    @apply px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700;
+}
+
+.btn-success {
+    @apply px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700;
+}
+.btn-danger {
+    @apply px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700;
+}
+
+@layer base {
+    h1 {
+      @apply text-5xl;
+    }
+    h2 {
+      @apply text-4xl;
+    }
+    h3 {
+      @apply text-3xl;
+    }
+    h4 {
+      @apply text-2xl;
+    }
+    h5 {
+      @apply text-xl;
+    }
+    h6 {
+      @apply text-lg;
+    }
+  }
