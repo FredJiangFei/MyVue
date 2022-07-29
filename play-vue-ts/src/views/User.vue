@@ -3,14 +3,21 @@
     <Container>
       <Loader v-if="loading" />
       <h5>UserCount: {{ userCount }}</h5>
-      <input v-model="keyword" placeholder="Search"/>
+      <input v-model="keyword" placeholder="Search" />
+      <input v-model="keywordEffect" placeholder="Search Effect" />
+      <label>
+        Check Box Effect:
+        <input type="checkbox" v-model="checkboxEffect" />
+      </label>
+      <button @click="saveAndClose">Finish editing</button>
+
       <UserList v-if="!loading" :users="users" @delete-user="onDeleteUser" />
     </Container>
   </DashboardLayout>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, shallowRef, computed } from 'vue';
+import { defineComponent, ref, shallowRef, computed, watchEffect } from 'vue';
 import Loader from '@/components/Loader.vue';
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 import Container from '@/components/Container.vue';
@@ -35,7 +42,7 @@ export default defineComponent({
     keyword: function (newValue, oldValue) {
       console.log('newValue:', newValue);
       console.log('oldValue:', oldValue);
-    }
+    },
   },
   setup() {
     const loading = ref(false);
@@ -43,10 +50,24 @@ export default defineComponent({
 
     const userCount = computed(() => users.value.length);
 
+    const keywordEffect = ref('');
+    const checkboxEffect = ref(false);
+    const stopSaving = watchEffect(() => {
+      console.log('keywordEffect: ', keywordEffect.value);
+      console.log('checkboxEffect: ', checkboxEffect.value);
+    });
+
+    const saveAndClose = () => {
+      stopSaving();
+    };
+
     return {
       loading,
       users,
       userCount,
+      keywordEffect,
+      checkboxEffect,
+      saveAndClose
     };
   },
   async created() {
