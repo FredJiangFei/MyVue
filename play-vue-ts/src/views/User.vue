@@ -2,13 +2,14 @@
   <DashboardLayout>
     <Container>
       <Loader v-if="loading" />
+      <h5>UserCount: {{ userCount }}</h5>
       <UserList v-if="!loading" :users="users" @delete-user="onDeleteUser"/>
     </Container>
   </DashboardLayout>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, shallowRef } from 'vue';
+import { defineComponent, ref, shallowRef, computed } from 'vue';
 import Loader from '@/components/Loader.vue';
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 import Container from '@/components/Container.vue';
@@ -26,11 +27,14 @@ export default defineComponent({
   },
   setup() {
     const loading = ref(false);
-    const users = shallowRef<null | User[]>(null);
+    const users = shallowRef<User[]>([]);
+
+    const userCount = computed(() => users.value.length);
 
     return {
       loading,
       users,
+      userCount
     };
   },
   async created() {
@@ -46,9 +50,9 @@ export default defineComponent({
       this.loading = false;
     }
   },
-   methods: {
+  methods: {
     onDeleteUser(userId: number) {
-      console.log(userId);
+      this.users = this.users.filter((x: User)=> x.id !== userId);
     }
   }
 });
