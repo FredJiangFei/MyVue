@@ -3,7 +3,8 @@
     <Container>
       <Loader v-if="loading" />
       <h5>UserCount: {{ userCount }}</h5>
-      <UserList v-if="!loading" :users="users" @delete-user="onDeleteUser"/>
+      <input v-model="keyword" placeholder="Search"/>
+      <UserList v-if="!loading" :users="users" @delete-user="onDeleteUser" />
     </Container>
   </DashboardLayout>
 </template>
@@ -23,7 +24,18 @@ export default defineComponent({
     Loader,
     DashboardLayout,
     Container,
-    UserList
+    UserList,
+  },
+  data() {
+    return {
+      keyword: '',
+    };
+  },
+  watch: {
+    keyword: function (newValue, oldValue) {
+      console.log('newValue:', newValue);
+      console.log('oldValue:', oldValue);
+    }
   },
   setup() {
     const loading = ref(false);
@@ -34,7 +46,7 @@ export default defineComponent({
     return {
       loading,
       users,
-      userCount
+      userCount,
     };
   },
   async created() {
@@ -52,8 +64,8 @@ export default defineComponent({
   },
   methods: {
     onDeleteUser(userId: number) {
-      this.users = this.users.filter((x: User)=> x.id !== userId);
-    }
-  }
+      this.users = this.users.filter((x: User) => x.id !== userId);
+    },
+  },
 });
 </script>

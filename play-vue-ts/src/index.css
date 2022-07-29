@@ -33,6 +33,9 @@
     h6 {
       @apply tw-text-lg;
     }
+    input {
+      @apply tw-block tw-w-full tw-py-1.5 tw-text-gray-700 tw-border tw-border-solid tw-border-gray-300 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-blue-600 focus:tw-outline-none;
+    }
   }
 
 @tailwind components;
