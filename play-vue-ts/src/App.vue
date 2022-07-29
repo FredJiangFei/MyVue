@@ -9,6 +9,6 @@
 
 <style lang="scss">
 * {
-  @apply tw-font-segoe;
+  @apply font-segoe;
 }
 </style>

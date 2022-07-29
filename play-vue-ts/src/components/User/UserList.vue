@@ -11,13 +11,16 @@
     <tbody>
       <tr v-for="(player, index) in users" :key="player.id">
         <td>
-          <img :src="player.avatar" />
+          <img class="w-24 h-24 rounded-full" :src="player.avatar" />
         </td>
         <td>{{ player.first_name }} {{ player.last_name }}</td>
         <td>{{ player.email }}</td>
         <td>
-          <button class="btn btn-blue tw-mr-1">Edit</button>
-          <button class="btn btn-danger" @click="$emit('delete-user', player.id)">
+          <button class="btn btn-blue mr-1">Edit</button>
+          <button
+            class="btn btn-danger"
+            @click="$emit('delete-user', player.id)"
+          >
             Delete
           </button>
         </td>
@@ -38,6 +41,6 @@ export default defineComponent({
       default: [],
     },
   },
-  emits: ['delete-user']
+  emits: ['delete-user'],
 });
 </script>

@@ -1,6 +1,6 @@
 <template>
   <DashboardLayout>
-    <h1 class="tw-text-3xl tw-font-bold tw-underline">About</h1>
+    <h1 class="text-3xl font-bold underline">About</h1>
   </DashboardLayout>
 </template>
 

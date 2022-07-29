@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  prefix: "tw-",
-  purge: ["./src/**/*.{js,jsx,ts,tsx,vue}"],
+  purge: ['./src/**/*.{js,jsx,ts,tsx,vue}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     container: {
@@ -16,9 +15,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        segoe: ["Segoe UI", "sans-serif"]
-      }
-    }
+        segoe: ['Segoe UI', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
