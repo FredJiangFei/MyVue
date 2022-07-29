@@ -11,7 +11,7 @@
       </label>
       <button @click="saveAndClose">Finish editing</button>
 
-      <UserList v-if="!loading" :users="users" @delete-user="onDeleteUser" />
+      <UserListSetup v-if="!loading" :users="users" @delete-user="onDeleteUser" />
     </Container>
   </DashboardLayout>
 </template>
@@ -22,6 +22,7 @@ import Loader from '@/components/Loader.vue';
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 import Container from '@/components/Container.vue';
 import UserList from '@/components/User/UserList.vue';
+import UserListSetup from '@/components/User/UserListSetup.vue';
 import { User } from '@/types/user';
 import axios from 'axios';
 
@@ -32,6 +33,7 @@ export default defineComponent({
     DashboardLayout,
     Container,
     UserList,
+    UserListSetup
   },
   data() {
     return {
